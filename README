@@ -1,22 +1,10 @@
-A JFlex+Cup implementation for the Tiny language.
+Alex Lapena
+Loai Shaheen
 
-  Note that you need to modify the classpath in the Makefile so that it
-will point to the directory where "java_cup" is located.  In my own setting,
-classpath is /usr/share/java/cup.jar.
+To test source code like "1.cm", type 
 
-  To build the parser, type "make" in the current directory, which will 
-generate an executable program called "tiny".
+    "java -classpath /usr/share/java/cup.jar:. Main 1.cm" 
 
-  To test source code like "gcd.tiny", type 
+ ** Incomplete assignment, has trouble reading in declarations
 
-    "java -classpath /usr/share/java/cup.jar:. Main gcd.tiny" 
-
-and the syntax tree will be displayed on the screen.
-
-  To rebuild the parser, type "make clean" and type "make" again.
-
-  Also note that all the abstract syntax tree structures are defined under
-the directory "absyn" and within "Absyn.java" class, the showTree function
-is implemented.  In addition, since some java files are generated automatically,
-they may contain variables that are not used, which are safe to ignore in
-the compilation process.
+ ** Used in Reference to Dr. Fei Song's java_tiny

@@ -67,12 +67,13 @@ import java_cup.runtime.*;
 
 LineTerminator = \r|\n|\r\n
 WhiteSpace     = {LineTerminator} | [ \t\f]
+Comment = "/*" [^*] ~"*/" | "/*" "*"+ "/"
 
-num = digit digit*
-id = letter letter* 
+num = {digit}+
+id = {letter}+ 
 
-digit = 0|..|9
-letter = A|..|z|A|..|Z
+digit = [0-9]
+letter = [a-zA-Z]
 
    
 %%
@@ -111,5 +112,5 @@ letter = A|..|z|A|..|Z
 {id}                 { return symbol(sym.ID, yytext()); }
 {num}                { return symbol(sym.NUM, yytext()); }
 {WhiteSpace}*        { /* skip whitespace */ }   
-"/*"[^(*/)]*"*/"     { /* skip comments */ }
+{Comment}            { /* skip comments */ }
 .                    { return symbol(sym.ERROR); }
