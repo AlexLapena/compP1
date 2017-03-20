@@ -1,10 +1,6 @@
 /*
-  Created By: Fei Song
-  File Name: tiny.flex
-  To Build: jflex tiny.flex
-
-  and then after the parser is created
-    javac Lexer.java
+  Alex Lapena
+  Loai Shaheen
 */
    
 /* --------------------------Usercode Section------------------------ */
@@ -100,7 +96,7 @@ letter = [a-zA-Z]
 ">="                 { return symbol(sym.GTE); }
 "=="                 { return symbol(sym.EQEQ); }
 "!="                 { return symbol(sym.NE); }
-"="                  { return symbol(sym.EQUALS); }
+"="                  { return symbol(sym.ASSIGN); }
 ";"                  { return symbol(sym.SEMI); }
 ","                  { return symbol(sym.COMMA); }
 "("                  { return symbol(sym.LPAREN); }
