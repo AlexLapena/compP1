@@ -9,6 +9,7 @@
 /* Import the class java_cup.runtime.*  */
 //import java_cup.runtime.*;
 import absyn.*;
+import symbols.*;
 import java.util.*;
    
 /* Parser code to change the way the parser reports errors (include
@@ -80,6 +81,9 @@ program       ::= dec_list:s
                     if ("-a".equals(arg)) {
                       System.out.println( "The abstract syntax tree is:" );
                       Absyn.showTree( RESULT, 0 );
+                    }
+                    if("-s".equals(arg)) {
+                      System.out.println("The symbol table is:");
                     }
                    }
                  :}
